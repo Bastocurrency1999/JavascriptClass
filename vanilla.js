@@ -60,9 +60,50 @@ if(SelectInfo==2)
 
 
 if(SelectInfo==3){
-    var DataMenu =parseInt(prompt("1. Buy Data \n 2.Daily and Weekend \n 3. Weekly \n 4. Monthly"));
-    if(DataMenu==1){}
+    var DataMenu =parseInt(prompt("1. Buy Data \n 2. Check data \n 3. Data Transfer"));
+    // Test condition for Buy Data starts  //
+    if(DataMenu==1){
+      var DataL =parseInt(prompt("1. Daily and Weekend \n 2. Weekly \n 3. Monthly"));
+    // Test condition for Daily and Weekend starts //
+    if(DataL==1){
+       var DailyDT =parseInt(prompt("1. Daily 25MB \n 2. Daily 100MB \n 3. Daily 650MB \n 4. Nights and Weekend"));
+       // Test codition for Daily 25MB  starts //
+       if(DailyDT==1){}
+       // Test codition for Daily 25MB  Ends //
+
+      // Test codition for Daily 100MB  starts //
+       if(DailyDT==2){}
+      // Test codition for Daily 100MB  Ends //
+
+      // Test codition for Daily 650MB  starts //
+       if(DailyDT==3){}
+      // Test codition for Daily 650MB  Ends //
+
+      // Test codition for  Night and Weekend  starts //
+       if(DailyDT==4){}
+      // Test codition for  Night and Weekend  Ends //
+    }
+    // Test condition for Daily and Weekend Ends //
+
+      // Test condition for Daily and weekend starts  //
+      if (DataL==1){}
+      // Test condition for Daily and weekend Ends //
+
+      // Test condition for Weekly starts  //
+      if (DataL==2){}
+      // Test condition for Weekly Ends  //
+
+      // Test condition for Monthly starts  //
+      if (DataL==3){}
+      // Test condition for Monthly Ends  //
+    }
+    // Test condition for Buy Data Ends  //
+
+    // Test condition for Check Data starts  //
     if(DataMenu==2){}
+    // Test condition for Check Data Ends  //
+
+   // Test condition for Data Transfer Starts  //
     if(DataMenu==3){}
-    if(DataMenu==4){}
+  // Test condition for Data Transfer Ends  //
 }
