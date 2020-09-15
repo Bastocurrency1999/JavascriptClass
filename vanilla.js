@@ -1,3 +1,7 @@
+///////////////////////////////////////////////////////////////////////////////////////
+ // ########################### My First Assignment ##################################
+//////////////////////////////////////////////////////////////////////////////////////
+
 // create a variable of Select info
 var SelectInfo = parseInt(prompt("WELCOME TO BASTO-DEV SERVICE PROVIDER \n SELECT YOUR PREFERRED OPTIONS * \n\n 1. Airtime-Self \n 2.Airtime-Other\n 3.Data \n 4.Transfer"))
 
@@ -104,6 +108,38 @@ if(SelectInfo==3){
     // Test condition for Check Data Ends  //
 
    // Test condition for Data Transfer Starts  //
-    if(DataMenu==3){}
+    if(DataMenu==3){
+      var Pin = parseInt(prompt("Please Enter Your Pin"));
+      var RecipientNo = parseInt(prompt("Please Enter Your Recipient Number"));
+      var DataAmount = parseInt(prompt("Please Enter Megabyte Amount You wanna Send"))
+       /* i will work on this data Amount and apply condition that the Mb should range
+        between 1MB to 1000MB */
+        if(DataAmount > 100 && < = 5000){
+          var ConfirmMb = confirm("Are you sure you wanna send an Amount of " + DataAmount + "MB to " + RecipientNo + "");
+          if(ConfirmMb==true){
+            alert("An amount of " + DataAmount + " Is Successfully Sent to " + RecipientNo + "")
+            var ConfirmN = confirm("Wanna do Another transaction ? ")
+            if(ConfirmN==true){
+              // i want it to go back to Please Enter your pin
+            }else{
+              alert("Thanks for Choosing BASTO-DEV NETWORK PROVIDER")
+            }
+          }else{
+            // i want it to go back to Enter Megabyte Amount you wanna send
+          }
+        }
+    }
   // Test condition for Data Transfer Ends  //
 }
+
+
+
+if (SelectInfo==4){
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+ // ############################# Todays Excersice 3:09 ##########################################
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
