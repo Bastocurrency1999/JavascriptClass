@@ -114,7 +114,7 @@ if(SelectInfo==3){
       var DataAmount = parseInt(prompt("Please Enter Megabyte Amount You wanna Send"))
        /* i will work on this data Amount and apply condition that the Mb should range
         between 1MB to 1000MB */
-        if(DataAmount > 100 && < = 5000){
+        if(DataAmount > 100){
           var ConfirmMb = confirm("Are you sure you wanna send an Amount of " + DataAmount + "MB to " + RecipientNo + "");
           if(ConfirmMb==true){
             alert("An amount of " + DataAmount + " Is Successfully Sent to " + RecipientNo + "")
