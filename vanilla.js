@@ -141,5 +141,28 @@ if (SelectInfo==4){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
  // ############################# Todays Excersice 3:09 ##########################################
+
+
+ var FirstNumber = parseInt(prompt("Input your first number"));
+do{
+  FirstNumber = prompt("Please provide an input")
+}
+while(!FirstNumber)
+var SecondNumber = parseInt(prompt("Input your second number"));
+var PromptAlways = prompt("please provide an input");
+
+var Check = parseInt(prompt("1.Addition\n2.Subtract\n3.Multiply\n4.Division"));
+if(Check==1){
+  var Add = alert(FirstNumber  + SecondNumber);
+}
+if(Check==2){
+  var Subtract = alert(FirstNumber - SecondNumber);
+}
+if(Check==3){
+  var Multiply = alert(FirstNumber * SecondNumber);
+}
+if(Check==4){
+  var Division = alert(FirstNumber / SecondNumber);
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
