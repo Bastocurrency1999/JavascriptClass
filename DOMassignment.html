@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+	body{
+		margin:0;
+		padding:0;
+		font-family: poppins;
+		
+	}
+	table{
+		border:hidden;
+		margin:70px auto;
+		width:80%;
+	}
+	th{
+		color:maroon;
+	}
+    table tr th{
+    	border:1px solid black;
+    }
+    td{
+    	background:lightgray;
+    }
+</style>
+</head>
+<body>
+<table id="content">
+<tr>
+  <th>SN</th>
+  <th>Company Name</th>
+  <th>Company Email</th>
+  <th>Company Phone Number</th>
+  <th>Location</th>
+</tr>
+<tbody>
+	
+</tbody>
+</table>
+<script>
+
+
+// create an array that stores the companies info
+let companiesInfo = [
+  {
+    id: "1",
+    name: "Pace Timesheet",
+    email: "pacetimesheet@google.com",
+    phone: "08184097948",
+    location: "Nigeria",
+  },
+  {
+    id: "2",
+    name: "Facebook",
+    email: "Fb@gmail.com",
+    phone: "08000223400",
+    location: "USA",
+  },
+  {
+    id: "3",
+    name: "Amazon",
+    email: "Baseet@amazon.com",
+    phone: "087770000000",
+    location: "Malaysia",
+  },
+  {
+    id: "4",
+    name: "Martreach",
+    email: "Baseet@martreach.com",
+    phone: "0800099000",
+    location: "Paris",
+  },
+];
+
+
+
+
+// send the table to the DoM and also making the Th to be static since is the template 
+document.getElementById("content").innerHTML = `<table>
+<tr>
+  <th>SN</th>
+  <th>Comapny Name</th>
+  <th>Company Email</th>
+  <th>Company Phone</th>
+  <th>Location</th>
+</tr>
+<tbody>  
+    ${companiesInfo.map(
+      (x) => `<tr><td>${x.id}</td>
+    <td>${x.name}</td>
+    <td>${x.email}</td>
+    <td>${x.phone}</td>
+    <td>${x.location}</td> </tr>`
+    )} 
+</tbody>
+</table>`;
+</script>
+</body>
+</html>
