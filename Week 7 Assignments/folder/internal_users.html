@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addUser()"> Add a new user</button>
+    <p></p>
+    <p></p>
+    <div id="users"></div>
+   
+    <script>
+       
+           let internalUsers =
+         [
+             { "fullName" :  "Opaluwa Aisha",
+               "email" : "aisha@tiidlelab.co",
+               "phone" : "080353636637",
+               "pics" : "1.jpeg"
+
+             },
+             { "fullName" :  "Samuel Yusuf",
+               "email" : "syusuf@tiidlelab.co",
+               "phone" : "080435366638",
+               "pics"   : "2.jpg"
+
+             }
+
+        ]
+displayUsers()
+function displayUsers(){
+       
+         usersPlaceholder =  '';
+        for (i=0; i<internalUsers.length;i++)
+        {
+
+            if(internalUsers[i]!=null || internalUsers[i]!=undefined )
+            {
+            usersPlaceholder +=`<div>
+            <img src="${internalUsers[i].pics}" style="max-height: 100px;">
+            <strong>Full Name</strong> : ${internalUsers[i].fullName}<br>
+            <strong>Email</strong> : ${internalUsers[i].email}<br>
+            <strong>Phone</strong> : ${internalUsers[i].phone}<br>
+            <button  style="background-color:red; color:#FFF" onClick="deleteUser(${i})" >Delete</button>
+            <button style="background-color:green; color:#FFF" onClick="editUser(${i})" >Edit</button>
+
+        </div> <hr>`}
+
+
+        }
+        document.getElementById("users").innerHTML = usersPlaceholder
+}
+
+function deleteUser(id)
+{
+    if(confirm(`re you sure you want to delete ${internalUsers[id].fullName} ? `)){
+    internalUsers.splice(id,1)
+    //delete internalUsers[id]
+
+    //alert(JSON.stringify(internalUsers))
+
+   displayUsers()
+    }
+    
+
+}
+
+function addUser()
+{
+    let newUser = 
+    { "fullName" :  prompt("Enter your full Name"),
+               "email" :  prompt("Enter your email"),
+               "phone" :  prompt("Enter your phone"),
+               "pics" :  prompt("upload profile pics")
+
+    }
+    internalUsers.push(newUser)
+    displayUsers()
+
+}
+function editUser(id)
+{
+    let userDetails = 
+    { "fullName" :  prompt("Enter your full Name",internalUsers[id].fullName),
+               "email" :  prompt("Enter your email",internalUsers[id].email),
+               "phone" :  prompt("Enter your phone",internalUsers[id].phone),
+               "pics" :  prompt("upload profile pics",internalUsers[id].pics)
+
+    }
+    internalUsers[id] = userDetails
+  
+    displayUsers()
+
+}
+
+
+
+
+    </script>
+    
+</body>
+</html>
