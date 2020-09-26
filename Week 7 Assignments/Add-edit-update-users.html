@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Assets/css/Add-edit-update-users.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Add a new user, it's fast and easy...</h1>
+    <form>
+    Fullname<br><input  id="fullname" value="" ><p></p>
+    Stack<br><input  id="stack" value="" ><p></p>
+    Email-Address<br><input id="email" ><p></p>
+    Phone Number<br><input  id="phone" ><p></p>
+    Image<br><input  id="pics"><p></p>
+
+
+    <button onClick="AddNewUser()" > Add new user +</button>
+   </form>
+    <p></p>
+    <p></p>
+    <div id="UsersProfileWrapper"></div>
+
+    <script>
+    /*syntax 
+    add
+    get an item
+    delete all
+    delete item
+
+      
+
+        */
+       
+       
+
+        // add 
+        // localStorage.setItm("locationName", Data to be saved)
+
+
+
+        // get 
+        // localStorage.getItem("locationName")
+        // felloName =  "Jane"
+        //alert(felloName.length)
+        
+        UsersProfile =JSON.parse(localStorage.getItem("random"))
+       if(UsersProfile == null)
+       {
+        UsersProfile = [];
+
+       }
+       
+     
+        JSON.stringify // converts JSON to string
+
+        JSON.parse // converts to JSON
+
+        function AddNewUser()
+        {
+ // fullName = document.getElementById("fullname").value;
+ //              alert(fullName);           
+
+            newUser = 
+            { 
+              "fullname" : document.getElementById("fullname").value,
+               "stack" : document.getElementById("stack").value,
+               "email" : document.getElementById("email").value,
+               "phone" : document.getElementById("phone").value,
+               "pics" : document.getElementById("pics").value
+
+             }
+             UsersProfile.push(newUser)
+        
+ 
+            localStorage.setItem("random",JSON.stringify(UsersProfile))
+
+            displayUsers()
+
+        }
+
+        function displayUsers(){
+       
+       usersPlaceholder =  '';
+      for (i=0; i<UsersProfile.length;i++)
+      {
+
+          if(UsersProfile[i]!=null || UsersProfile[i]!=undefined )
+          {
+          usersPlaceholder +=`<div class="users-profile">
+                  <img src="/Assets/Images/1.png">
+                    <div class="input-wrapper">
+                          <label>Fullname&nbsp;<i class="fas fa-user"></i></label><br>
+                          <input type="text" name="" value="${UsersProfile[i].fullname}" readonly><br>
+                          <label>Stack&nbsp;<i class="fas fa-address-card"></i></label><br>
+                          <input type="text" name="" value="${UsersProfile[i].stack}" readonly><br>
+                          <label>E-mail Address&nbsp;<i class="fas fa-envelope"></i></label><br>
+                          <input type="email" name="" value="${UsersProfile[i].email}" readonly><br>
+                          <label>Phone Number&nbsp;<i class="fas fa-phone"></i></label><br>
+                          <input type="text" name="" value="${UsersProfile[i].phone}" readonly><br>
+                          <label>Image&nbsp;<i class="fas fa-phone"></i></label><br>
+                          <input type="text" name="" value="${UsersProfile[i].pics}" readonly><p></p>
+                          <button class="edit" onclick="EditUser(${i})">Edit</button> <button class="delete" onclick="DeleteUser(${i})">Delete</button>
+                    </div>
+                  </div>
+                  <div class="separator"></div>`}
+
+
+      }
+      document.getElementById("UsersProfileWrapper").innerHTML = usersPlaceholder
+}
+
+displayUsers()
+
+        function DeleteUser(id)
+        {
+            
+
+            newUser = 
+            { "fullName" : document.getElementById("fullname").value,
+               "stack" : document.getElementById("stack").value,
+               "email" : document.getElementById("email").value,
+               "phone" : document.getElementById("phone").value,
+               "pics" : document.getElementById("pics").value
+
+             }
+             UsersProfile.splice(id,1)
+        
+ 
+            localStorage.removeItem("random",JSON.stringify(UsersProfile))
+
+            displayUsers()
+
+        }
+
+function EditUser(id)
+{
+         newUser  = 
+        {                                               
+          "fullname" :prompt("Change fullname",UsersProfile[id].fullname),
+          "stack" :prompt("Change stack",UsersProfile[id].stack),
+          "email" : prompt("Change email",UsersProfile[id].email),
+          "phone" : prompt("Change phone",UsersProfile[id].phone),
+          "pics" : prompt("Change profile pics",UsersProfile[id].pics)
+
+        }
+        UsersProfile[id] = newUser;
+        displayUsers()
+ 
+
+        localStorage.setItem("random",JSON.stringify(UsersProfile))
+}
+    </script>
+    
+</body>
+</html>
