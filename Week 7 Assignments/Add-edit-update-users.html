@@ -23,27 +23,6 @@
     <div id="UsersProfileWrapper"></div>
 
     <script>
-    /*syntax 
-    add
-    get an item
-    delete all
-    delete item
-
-      
-
-        */
-       
-       
-
-        // add 
-        // localStorage.setItm("locationName", Data to be saved)
-
-
-
-        // get 
-        // localStorage.getItem("locationName")
-        // felloName =  "Jane"
-        //alert(felloName.length)
         
         UsersProfile =JSON.parse(localStorage.getItem("random"))
        if(UsersProfile == null)
@@ -52,16 +31,9 @@
 
        }
        
-     
-        JSON.stringify // converts JSON to string
-
-        JSON.parse // converts to JSON
 
         function AddNewUser()
         {
- // fullName = document.getElementById("fullname").value;
- //              alert(fullName);           
-
             newUser = 
             { 
               "fullname" : document.getElementById("fullname").value,

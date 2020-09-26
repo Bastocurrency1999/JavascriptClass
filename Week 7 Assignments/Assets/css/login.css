@@ -1,0 +1,28 @@
+body{
+    margin:0;
+    padding:0;
+}
+*{
+    font-family:poppins;
+}
+h4 {
+    font-family:poppins;
+}
+h1{
+    text-align:center;
+}
+h3{
+    text-align:center;
+}
+form{
+    border:hidden;
+    width:25%;
+    margin:10px auto;
+    box-shadow:2px 1px 8px black;
+    padding:40px;
+    background: gray;
+    color:white;
+}
+form input{
+    width:100%;
+}
