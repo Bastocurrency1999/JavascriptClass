@@ -25,9 +25,17 @@ function chekUsername(object){
     return object.username == document.getElementById("userName").value
 }
 
-
+function PromptContinuousUserprofile()
+{
+    do {
+        alert("Users information must be included");
+    }
+    while(AddNewUser()==false)
+}
 function AddNewUser()
         { 
+              
+            PromptContinuousUserprofile()
             password = document.getElementById("upassword").value
             cpassword =  document.getElementById("cpassword").value
    
